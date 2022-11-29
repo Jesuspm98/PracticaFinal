@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public int maxHealth;
-    public int currentHealth;
+    private int currentHealth;
 
     private void Start()
     {
@@ -31,4 +31,9 @@ public class Health : MonoBehaviour
     public virtual void Die()
     {
     }
+
+    //private void OnMouseDown()
+    //{
+    //    TakeDamage(1);
+    //}
 }
