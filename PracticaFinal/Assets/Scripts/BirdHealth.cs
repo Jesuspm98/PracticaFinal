@@ -1,23 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BirdHealth : Health
 {
-    private Collider2D enemyCollider;
-    private Animator enemyAnimator;
+    private SpriteRenderer birdRend;
+    private Collider2D birdCollider;
+    private Animator birdAnimator;
     public float timeToDie = 3;
 
-    private void Awake()
+    public void Awake()
     {
-        enemyCollider = GetComponent<Collider2D>();
-        enemyAnimator = GetComponent<Animator>();
+        birdRend = GetComponent<SpriteRenderer>();
+        birdCollider = GetComponent<Collider2D>();
+        //enemyAnimator = GetComponent<Animator>();
     }
 
     public override void Die()
     {
-        enemyCollider.enabled = false;
-        enemyAnimator.SetTrigger("Death");
+        birdRend.enabled = false;
+        birdCollider.enabled = false;
+        //enemyAnimator.SetTrigger("Death");
         StartCoroutine(DeathCorrutine());
     }
 
