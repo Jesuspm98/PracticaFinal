@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BirdSpawner : MonoBehaviour
 {
-    public GameObject birdPrefabs;
+	public GameObject birdPrefabs;
 
-    public Transform[] birdSpawnPositions;
+	public Transform[] birdSpawnPositions;
 
-    public float timeToSpawn = 5f;
+	public float timeToSpawn = 5f;
 
-    private void Update()
-    {
-    }
+	private void Update()
+	{
+	}
 }
