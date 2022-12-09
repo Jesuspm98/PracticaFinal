@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClickHit : MonoBehaviour
 {
+    public int currentNumberOfPoints;
+    public Text pointText;
     private int damageDealt = 1;
 
     private void Update()
@@ -15,6 +18,20 @@ public class ClickHit : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(origin, dir);
             if (hit)
             {
+                string hitTag = hit.collider.gameObject.tag;
+                switch (hitTag)
+                {
+                    case "Bird":
+                        GetPoints(1);
+                        break;
+
+                    case "BigBird":
+                        GetPoints(3);
+                        break;
+
+                    default:
+                        break;
+                }
                 Health health = hit.collider.gameObject.GetComponent<Health>();
                 if (health != null)
                 {
@@ -22,5 +39,11 @@ public class ClickHit : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void GetPoints(int pointAmount)
+    {
+        currentNumberOfPoints += pointAmount;
+        pointText.text = currentNumberOfPoints.ToString();
     }
 }

@@ -24,10 +24,6 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
     public virtual void Die()
     {
     }

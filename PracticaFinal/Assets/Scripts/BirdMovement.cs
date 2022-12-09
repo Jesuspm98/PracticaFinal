@@ -8,6 +8,6 @@ public class BirdMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * movingSpeed;
+        transform.position += transform.right * Time.deltaTime * movingSpeed;
     }
 }
