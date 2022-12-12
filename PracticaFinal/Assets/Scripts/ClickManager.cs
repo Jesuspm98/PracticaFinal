@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClickHit : MonoBehaviour
+public class ClickManager : MonoBehaviour
 {
     public int currentNumberOfPoints;
     public Text pointText;
