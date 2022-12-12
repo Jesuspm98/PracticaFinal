@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClickManager : MonoBehaviour
+public class ClickManager : MonoBehaviour, IHealth, IDamageable
 {
     public int currentNumberOfPoints;
     public Text pointText;
     private int damageDealt = 1;
+
+    public int maxHealth { get; private set; }
+
+    public int currentHealth { get; private set; }
 
     private void Update()
     {
@@ -32,11 +36,11 @@ public class ClickManager : MonoBehaviour
                     default:
                         break;
                 }
-                Health health = hit.collider.gameObject.GetComponent<Health>();
-                if (health != null)
-                {
-                    health.TakeDamage(damageDealt);
-                }
+                //Health health = hit.collider.gameObject.GetComponent<Health>();
+                //if (health != null)
+                //{
+                //    health.TakeDamage(damageDealt);
+                //}
             }
         }
     }
@@ -45,5 +49,17 @@ public class ClickManager : MonoBehaviour
     {
         currentNumberOfPoints += pointAmount;
         pointText.text = currentNumberOfPoints.ToString();
+    }
+
+    public void TakeDamage(int damageTaken)
+    {
+    }
+
+    public void Die()
+    {
+    }
+
+    public void Interact()
+    {
     }
 }
