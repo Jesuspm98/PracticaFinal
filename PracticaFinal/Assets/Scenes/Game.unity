@@ -1118,7 +1118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7555f09555652864a9f6ddc986f2c848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdPrefabs: {fileID: 5651760740764980238, guid: 6fe861f51feade244a669c4ee54938d6, type: 3}
+  birdsPrefabs:
+  - {fileID: 5651760740764980238, guid: 6fe861f51feade244a669c4ee54938d6, type: 3}
+  - {fileID: 5651760740764980238, guid: 34a22b3b57104c449a6acbcda66c2640, type: 3}
   birdSpawnPositions:
   - {fileID: 1887732759}
   - {fileID: 865628805}
@@ -1126,7 +1128,7 @@ MonoBehaviour:
   - {fileID: 480813133}
   - {fileID: 2047209036}
   - {fileID: 1834497284}
-  timeToSpawn: 5
+  timeToSpawn: 3
 --- !u!1 &1803193878
 GameObject:
   m_ObjectHideFlags: 0

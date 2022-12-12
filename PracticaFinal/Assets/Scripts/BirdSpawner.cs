@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BirdSpawner : MonoBehaviour
 {
-    public GameObject birdPrefabs;
+    public GameObject[] birdsPrefabs;
 
     public Transform[] birdSpawnPositions;
 
@@ -19,9 +19,10 @@ public class BirdSpawner : MonoBehaviour
         if (timeSinceLastSpawn > timeToSpawn)
         {
             timeSinceLastSpawn = 0;
+            int randPref = Random.Range(0, birdsPrefabs.Length);
             int rand = Random.Range(0, birdSpawnPositions.Length);
             Transform randomPos = birdSpawnPositions[rand];
-            Instantiate(birdPrefabs, randomPos.position, Quaternion.identity);
+            Instantiate(birdsPrefabs[randPref], randomPos.position, Quaternion.identity);
         }
     }
 }
