@@ -727,6 +727,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentNumberOfPoints: 0
+  targetNumberOfPoints: 100
+  maxScoreKey: MaxScore
+  recordText: {fileID: 606255868}
   scoreText: {fileID: 606255868}
 --- !u!4 &1256200911
 Transform:

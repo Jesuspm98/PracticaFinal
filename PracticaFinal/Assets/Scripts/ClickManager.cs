@@ -7,6 +7,10 @@ using UnityEngine.SceneManagement;
 public class ClickManager : MonoBehaviour
 {
     public int currentNumberOfPoints;
+    public int targetNumberOfPoints = 100;
+    public string maxScoreKey = "MaxScore";
+
+    public Text recordText;
     public Text scoreText;
     private bool birdIsDead = false;
 
