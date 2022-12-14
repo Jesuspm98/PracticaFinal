@@ -1,14 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class BirdHealth : MonoBehaviour, IHealth, IDamageable
+public class BigBirdHealth : MonoBehaviour, IHealth, IDamageable
 {
-    private Collider2D birdCollider;
+    private Collider2D bigBirdCollider;
     public float speedMovement = 10;
-    private string prefabTag = "Bird";
+    private string prefabTag = "BigBird";
 
     private float timeAlive = 6f;
 
@@ -18,7 +16,7 @@ public class BirdHealth : MonoBehaviour, IHealth, IDamageable
 
     private void Start()
     {
-        maxHealth = 1;
+        maxHealth = 3;
         currentHealth = maxHealth;
     }
 
@@ -29,7 +27,7 @@ public class BirdHealth : MonoBehaviour, IHealth, IDamageable
 
     private void Awake()
     {
-        birdCollider = GetComponent<Collider2D>();
+        bigBirdCollider = GetComponent<Collider2D>();
     }
 
     public void Die()

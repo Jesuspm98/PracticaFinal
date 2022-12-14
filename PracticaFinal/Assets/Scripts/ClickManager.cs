@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ClickManager : MonoBehaviour, IHealth, IDamageable
+public class ClickManager : MonoBehaviour
 {
     public int currentNumberOfPoints;
-    public Text pointText;
+    public Text scoreText;
+    private bool birdIsDead = false;
+
+    private int birdAmountScore = 1;
+    private int bigBirdAmountScore = 3;
     private int damageDealt = 1;
-
-    public int maxHealth { get; private set; }
-
-    public int currentHealth { get; private set; }
 
     private void Update()
     {
@@ -26,17 +27,26 @@ public class ClickManager : MonoBehaviour, IHealth, IDamageable
                 switch (hitTag)
                 {
                     case "Bird":
-                        GetPoints(1);
+                        if (birdIsDead = true)
+                        {
+                            GetPoints(birdAmountScore);
+                        }
                         break;
 
                     case "BigBird":
-                        GetPoints(3);
+                        if (birdIsDead = true)
+                        {
+                            GetPoints(bigBirdAmountScore);
+                        }
                         break;
 
                     default:
                         break;
                 }
-                //Health health = hit.collider.gameObject.GetComponent<Health>();
+
+                IDamageable damageable = hit.collider.gameObject.GetComponent<IDamageable>();
+
+                damageable.TakeDamage(damageDealt);
                 //if (health != null)
                 //{
                 //    health.TakeDamage(damageDealt);
@@ -47,19 +57,25 @@ public class ClickManager : MonoBehaviour, IHealth, IDamageable
 
     public void GetPoints(int pointAmount)
     {
+        scoreText.text = currentNumberOfPoints.ToString();
+
         currentNumberOfPoints += pointAmount;
-        pointText.text = currentNumberOfPoints.ToString();
+
+        if (currentNumberOfPoints >= 1)
+        {
+            scoreText.text = currentNumberOfPoints.ToString();
+            Debug.Log("Obtienes 1 punto");
+        }
     }
 
-    public void TakeDamage(int damageTaken)
+    public void IsDead()
     {
-    }
+        GameObject gameObject = GetComponent<GameObject>();
 
-    public void Die()
-    {
-    }
-
-    public void Interact()
-    {
+        if (gameObject != null)
+        {
+            birdIsDead = false;
+        }
+        return;
     }
 }

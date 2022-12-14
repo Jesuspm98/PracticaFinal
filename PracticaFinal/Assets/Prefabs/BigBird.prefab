@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5220341985365275272}
   - component: {fileID: 5220341985365275271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bird
   m_TagString: Bird
   m_Icon: {fileID: 0}
@@ -93,10 +93,10 @@ GameObject:
   - component: {fileID: 3823681567330894591}
   - component: {fileID: 7473757772540283875}
   - component: {fileID: 3624329142139828882}
-  - component: {fileID: 8617357475315910494}
-  m_Layer: 0
+  - component: {fileID: -8301073156503739065}
+  m_Layer: 7
   m_Name: BigBird
-  m_TagString: Bird
+  m_TagString: BigBird
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,7 +136,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3624329142139828882
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5085678, y: 1.3086096}
   m_EdgeRadius: 0
---- !u!114 &8617357475315910494
+--- !u!114 &-8301073156503739065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,8 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5651760740764980238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e75b423f6191cb4eb07e7b7417b1caf, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d6b5a3a53dc5954eaa1063730267bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  birdPrefab: {fileID: 5651760740764980238}
+  speedMovement: 6

@@ -12,6 +12,8 @@ public class BirdSpawner : MonoBehaviour
 
     private float timeSinceLastSpawn;
 
+    private float timeAlive = 6f;
+
     private void Update()
     {
         timeSinceLastSpawn += Time.deltaTime;
@@ -22,7 +24,15 @@ public class BirdSpawner : MonoBehaviour
             int randPref = Random.Range(0, birdsPrefabs.Length);
             int rand = Random.Range(0, birdSpawnPositions.Length);
             Transform randomPos = birdSpawnPositions[rand];
-            Instantiate(birdsPrefabs[randPref], randomPos.position, Quaternion.identity);
+            Instantiate(birdsPrefabs[randPref], birdSpawnPositions[rand].position, birdSpawnPositions[rand].rotation);
+        }
+    }
+
+    private void TimeToDestroy()
+    {
+        if (timeAlive >= 6)
+        {
+            Destroy(gameObject);
         }
     }
 }
