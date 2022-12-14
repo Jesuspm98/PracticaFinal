@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameScene : MonoBehaviour
+public class WinnerGameScene : MonoBehaviour
 {
     public void NextLevel()
     {

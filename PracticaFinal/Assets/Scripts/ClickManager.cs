@@ -10,9 +10,15 @@ public class ClickManager : MonoBehaviour
     public Text scoreText;
     private bool birdIsDead = false;
 
-    private int birdAmountScore = 1;
-    private int bigBirdAmountScore = 3;
+    private int scoreAmount = 1;
+
+    //private int bigBirdAmountScore = 3;
     private int damageDealt = 1;
+
+    private void Start()
+    {
+        scoreText.text = currentNumberOfPoints.ToString();
+    }
 
     private void Update()
     {
@@ -29,14 +35,14 @@ public class ClickManager : MonoBehaviour
                     case "Bird":
                         if (birdIsDead = true)
                         {
-                            GetPoints(birdAmountScore);
+                            GetPoints(scoreAmount);
                         }
                         break;
 
                     case "BigBird":
                         if (birdIsDead = true)
                         {
-                            GetPoints(bigBirdAmountScore);
+                            GetPoints(scoreAmount);
                         }
                         break;
 
@@ -57,15 +63,14 @@ public class ClickManager : MonoBehaviour
 
     public void GetPoints(int pointAmount)
     {
+        currentNumberOfPoints += pointAmount;
         scoreText.text = currentNumberOfPoints.ToString();
 
-        currentNumberOfPoints += pointAmount;
-
-        if (currentNumberOfPoints >= 1)
-        {
-            scoreText.text = currentNumberOfPoints.ToString();
-            Debug.Log("Obtienes 1 punto");
-        }
+        //if (currentNumberOfPoints >= 1)
+        //{
+        //    scoreText.text = currentNumberOfPoints.ToString();
+        //    Debug.Log("Obtienes 1 punto");
+        //}
     }
 
     public void IsDead()

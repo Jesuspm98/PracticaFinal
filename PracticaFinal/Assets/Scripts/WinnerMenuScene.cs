@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuScene : MonoBehaviour
+public class WinnerMenuScene : MonoBehaviour
 {
     public void NextLevel()
     {
