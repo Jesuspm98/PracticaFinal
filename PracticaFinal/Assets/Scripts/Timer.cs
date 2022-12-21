@@ -38,6 +38,7 @@ public class Timer : MonoBehaviour
 
     private void Record()
     {
+        PlayerPrefs.SetInt(clickManager.onRoundScoreKey, clickManager.currentNumberOfPoints);
         if (clickManager.currentNumberOfPoints >= clickManager.targetNumberOfPoints)
         {
             int maxScore = PlayerPrefs.GetInt(clickManager.maxScoreKey);
@@ -47,11 +48,12 @@ public class Timer : MonoBehaviour
 
                 PlayerPrefs.SetInt(clickManager.maxScoreKey, clickManager.currentNumberOfPoints);
             }
+            SceneManager.LoadScene("WinnerScene");
         }
         else /*if (clickManager.currentNumberOfPoints < clickManager.targetNumberOfPoints)*/
         {
             clickManager.scoreText.text = clickManager.currentNumberOfPoints.ToString();
+            SceneManager.LoadScene("LoserScene");
         }
-        SceneManager.LoadScene("WinnerScene");
     }
 }

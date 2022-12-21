@@ -9,6 +9,7 @@ public class ClickManager : MonoBehaviour
     public int currentNumberOfPoints;
     public int targetNumberOfPoints = 100;
     public string maxScoreKey = "MaxScore";
+    public string onRoundScoreKey = "OnRoundScore";
 
     public Text recordText;
     public Text scoreText;
